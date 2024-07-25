@@ -9,7 +9,7 @@ import fr from '@/i18n/fr';
 let lang = null;
 
 if (navigator.language === 'fr-FR') {
-  lang = 'en';
+  lang = 'fr';
 } else {
   lang = 'en';
 }
