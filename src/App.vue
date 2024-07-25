@@ -2,6 +2,7 @@
 import { ref, computed, watchEffect } from 'vue';
 import IconTimer from '@/components/icons/IconTimer.vue';
 import IconThermometer from '@/components/icons/IconThermometer.vue';
+import ThemeController from '@/components/ThemeController.vue';
 
 const tempFurnace = ref(null);
 const timeFurnace = ref(null);
@@ -39,6 +40,7 @@ const convertToAirfryer = () => {
 <template>
   <header>
     <h1 class="text-2xl">AirFryer Converter</h1>
+    <ThemeController />
   </header>
 
   <main class="flex items-center justify-center">
@@ -47,7 +49,6 @@ const convertToAirfryer = () => {
         <img src="@/assets/airfryer.jpg" alt="Shoes" />
       </figure>
       <div class="card-body">
-        <h2 class="card-title">Convertisseur pour Air Fryer!</h2>
         <form
           @submit.prevent="convertToAirfryer"
           method="post"
@@ -56,9 +57,7 @@ const convertToAirfryer = () => {
           <div class="flex flex-col items-center space-y-2">
             <label class="form-control w-full max-w-xs">
               <div class="label">
-                <span class="label-text"
-                  >Quelle est la température du four ?</span
-                >
+                <span class="label-text">Température du four ?</span>
               </div>
               <label class="input input-bordered flex items-center gap-2">
                 <IconThermometer />
@@ -75,9 +74,7 @@ const convertToAirfryer = () => {
 
             <label class="form-control w-full max-w-xs">
               <div class="label">
-                <span class="label-text"
-                  >Quel est le temps à mettre au four ?</span
-                >
+                <span class="label-text">Temps de cuisson au four ?</span>
               </div>
               <label class="input input-bordered flex items-center gap-2">
                 <IconTimer />
