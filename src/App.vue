@@ -57,7 +57,7 @@ const convertToAirfryer = () => {
           <div class="flex flex-col items-center space-y-2">
             <label class="form-control w-full max-w-xs">
               <div class="label">
-                <span class="label-text">Température du four ?</span>
+                <span class="label-text">{{ $t('tempFurn') }} ?</span>
               </div>
               <label class="input input-bordered flex items-center gap-2">
                 <IconThermometer />
@@ -66,7 +66,8 @@ const convertToAirfryer = () => {
                   type="text"
                   inputmode="tel"
                   class="grow"
-                  placeholder="Température"
+                  :placeholder="$t('temperature')"
+                  required
                 />
                 °C
               </label>
@@ -74,7 +75,7 @@ const convertToAirfryer = () => {
 
             <label class="form-control w-full max-w-xs">
               <div class="label">
-                <span class="label-text">Temps de cuisson au four ?</span>
+                <span class="label-text">{{ $t('timeFurn') }} ?</span>
               </div>
               <label class="input input-bordered flex items-center gap-2">
                 <IconTimer />
@@ -83,14 +84,15 @@ const convertToAirfryer = () => {
                   type="text"
                   inputmode="tel"
                   class="grow"
-                  placeholder="Temps"
+                  :placeholder="$t('time')"
+                  required
                 />
                 Min
               </label>
             </label>
-            <label class="form-control w-full max-w-xs">
+            <label v-if="tempAirFryer" class="form-control w-full max-w-xs">
               <div class="label">
-                <span class="label-text">Température au AirFryer:</span>
+                <span class="label-text">{{ $t('airFryerTemp') }}:</span>
               </div>
               <div class="input input-bordered flex items-center gap-2">
                 <IconThermometer />
@@ -103,9 +105,9 @@ const convertToAirfryer = () => {
                 °C
               </div>
             </label>
-            <label class="form-control w-full max-w-xs">
+            <label v-if="timeAirFryer" class="form-control w-full max-w-xs">
               <div class="label">
-                <span class="label-text">Temps au AirFryer:</span>
+                <span class="label-text">{{ $t('airFryerTime') }}:</span>
               </div>
               <div class="input input-bordered flex items-center gap-2">
                 <IconTimer /><input
@@ -119,7 +121,9 @@ const convertToAirfryer = () => {
             </label>
           </div>
           <div class="card-actions justify-end">
-            <button class="btn btn-primary" type="submit">Convertir</button>
+            <button class="btn btn-primary" type="submit">
+              {{ $t('convert') }}
+            </button>
           </div>
         </form>
       </div>
