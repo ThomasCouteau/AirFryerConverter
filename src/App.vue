@@ -90,7 +90,7 @@ const convertToAirfryer = () => {
                 Min
               </label>
             </label>
-            <label v-if="tempAirFryer" class="form-control w-full max-w-xs">
+            <label class="form-control w-full max-w-xs">
               <div class="label">
                 <span class="label-text">{{ $t('airFryerTemp') }}:</span>
               </div>
@@ -105,7 +105,7 @@ const convertToAirfryer = () => {
                 °C
               </div>
             </label>
-            <label v-if="timeAirFryer" class="form-control w-full max-w-xs">
+            <label class="form-control w-full max-w-xs">
               <div class="label">
                 <span class="label-text">{{ $t('airFryerTime') }}:</span>
               </div>
