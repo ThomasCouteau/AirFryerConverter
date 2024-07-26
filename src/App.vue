@@ -63,11 +63,13 @@ const convertToAirfryer = () => {
                 <IconThermometer />
                 <input
                   v-model="tempFurnace"
-                  type="text"
+                  type="number"
                   inputmode="tel"
                   class="grow"
                   :placeholder="$t('temperature')"
                   required
+                  min="0"
+                  max="250"
                 />
                 °C
               </label>
@@ -86,6 +88,7 @@ const convertToAirfryer = () => {
                   class="grow"
                   :placeholder="$t('time')"
                   required
+                  min="0"
                 />
                 Min
               </label>
